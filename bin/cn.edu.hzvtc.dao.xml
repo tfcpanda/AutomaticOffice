@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd ">
+
+	<!--用户dao配置 -->
+	<bean id="checkResultDao" class="cn.edu.hzvtc.dao.impl.CheckResultDaoImpl">
+		<property name="sessionFactory" ref="sessionFactory" />
+	</bean>
+	<bean id="claimVoucherDao" class="cn.edu.hzvtc.dao.impl.ClaimVoucherDaoImpl">
+		<property name="sessionFactory" ref="sessionFactory" />
+	</bean>
+	<bean id="claimVoucherDetailDao" class="cn.edu.hzvtc.dao.impl.ClaimVoucherDetailDaoImpl">
+		<property name="sessionFactory" ref="sessionFactory" />
+	</bean>
+	<bean id="claimVoucherStatisticsDao" class="cn.edu.hzvtc.dao.impl.ClaimVoucherStatisticsDaoImpl">
+		<property name="sessionFactory" ref="sessionFactory" />
+	</bean>
+	<bean id="claimVouyearStatisticsDao" class="cn.edu.hzvtc.dao.impl.ClaimVouyearStatisticsDaoImpl">
+		<property name="sessionFactory" ref="sessionFactory" />
+	</bean>
+	<bean id="departmentDao" class="cn.edu.hzvtc.dao.impl.DepartmentDaoImpl">
+		<property name="sessionFactory" ref="sessionFactory" />
+	</bean>
+	<bean id="employeeDao" class="cn.edu.hzvtc.dao.impl.EmployeeDaoImpl">
+		<property name="sessionFactory" ref="sessionFactory" />
+	</bean>
+	<bean id="leaveDao" class="cn.edu.hzvtc.dao.impl.LeaveDaoImpl">
+		<property name="sessionFactory" ref="sessionFactory" />
+	</bean>
+	<bean id="positionDao" class="cn.edu.hzvtc.dao.impl.PositionDaoImpl">
+		<property name="sessionFactory" ref="sessionFactory" />
+	</bean>
+</beans>

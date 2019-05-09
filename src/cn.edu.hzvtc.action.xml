@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd ">
+
+	<!-- 导入Bean配置文件 -->
+	<import resource="cn.edu.hzvtc.service.xml" />
+
+	<!--用户action配置 -->
+	<bean id="employeeAction" class="cn.edu.hzvtc.action.EmployeeAction"
+		scope="prototype">
+		<property name="employeeService" ref="employeeService"></property>
+	</bean>
+	<!-- 验证码配置 -->
+	<bean id="ValidationCodeAction" class="cn.edu.hzvtc.action.ValidationCodeAction"
+		scope="prototype">
+	</bean>
+	
+	<bean id="leaveAction" class="cn.edu.hzvtc.action.LeaveAction"
+		scope="prototype">
+		<property name="leaveService" ref="leaveService"></property>
+		<property name="departmentService" ref="departmentService"></property>
+	</bean>
+	
+	<bean id="claimVoucherAction" class="cn.edu.hzvtc.action.ClaimVoucherAction" scope="prototype">
+	<property name="claimVoucherService" ref="claimVoucherService"></property>
+	</bean>
+	
+	
+	<bean id="checkResultAction" class="cn.edu.hzvtc.action.CheckResultAction" scope="prototype">
+	<property name="checkResultService" ref="checkResultService"></property>
+	</bean>
+	<bean id="comMonthStatisticsAction" class="cn.edu.hzvtc.action.CompMonthStatisticsAction">
+	<property name="claimVoucherStatisticsService" ref="claimVoucherStatisticsService"></property>
+	</bean>
+	
+	<bean id="deptMonthStatisticsAction" class="cn.edu.hzvtc.action.DeptMonthStatisticsAction">
+		<property name="claimVoucherStatisticsService" ref="claimVoucherStatisticsService"></property>
+		<property name="claimVoucherService" ref="claimVoucherService"></property>
+	</bean>
+	
+	<bean id="compYearStatisticsAction" class="cn.edu.hzvtc.action.CompYearStatisticsAction">
+		<property name="claimVouyearStatisticsService" ref="claimVouyearStatisticsService"></property>
+	</bean>
+	
+	<bean id="deptYearStatisticsAction" class="cn.edu.hzvtc.action.DeptYearStatisticsAction">
+		<property name="claimVouyearStatisticsService" ref="claimVouyearStatisticsService"></property>
+		<property name="claimVoucherService" ref="claimVoucherService"></property>
+	</bean>
+	
+	
+	
+	
+</beans>

@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE struts PUBLIC "-//Apache Software Foundation//DTD Struts Configuration 2.1//EN" "struts-2.1.dtd" >
+<struts>
+	<constant name="struts.enable.DynamicMethodInvocation" value="false"></constant>
+
+	<constant name="struts.devMode" value="true"></constant>
+
+	<constant name="struts.i18n.encoding" value="UTF-8"></constant>
+
+
+	<package name="claimvoucher" namespace="/jsp/claim" extends="struts-default">
+	<!--报销单操作Action配置  -->
+		<action name="claimVoucher_*" method="{1}" class="claimVoucherAction">
+			<result name="list">claim_voucher_list.jsp</result>
+			<result name="view">claim_voucher_view.jsp</result>
+			<result name="update">claim_voucher_update.jsp</result>
+			<result name="check">claim_voucher_check.jsp</result>
+			<result name="input" type="redirect">/login.jsp</result>
+			<result name="redirectList" type="redirectAction">claimVoucher_searchClaimVoucher</result>
+			<result name="add">claim_voucher_edit.jsp</result>
+		</action>
+		<!-- 员工提交后，部门经理，总经理，财务登陆后调用action -->
+		<action name="checkResult_*" method="{1}" class="checkResultAction">
+			<result name="success" type="redirectAction">claimVoucher_searchClaimVoucher</result>
+			<result name="input">claim_voucher_check.jsp</result>
+		</action>
+	</package>
+</struts>

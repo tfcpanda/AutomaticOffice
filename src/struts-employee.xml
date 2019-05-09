@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE struts PUBLIC "-//Apache Software Foundation//DTD Struts Configuration 2.1//EN" "struts-2.1.dtd" >
+<struts>
+	<package name="employee" namespace="/" extends="struts-default">
+	<!-- 登录操作Action配置 -->
+		<action name = "emp-*" class="employeeAction" method="{1}">
+			<result name="input" type="dispatcher">/login.jsp</result>
+			<result name="success">/index.jsp</result>
+			<result name="logoutSuccess" type="redirect">/login.jsp</result>
+		</action>
+	</package>
+	
+</struts>

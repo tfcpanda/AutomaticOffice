@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd ">
+
+	<!-- 导入Bean配置文件 -->
+	<import resource="cn.edu.hzvtc.dao.xml" />
+
+	<!--用户service配置 -->
+	<bean id="checkResultService" class="cn.edu.hzvtc.service.impl.CheckResultServiceImpl">
+		<property name="claimVoucherDao" ref="claimVoucherDao"></property>
+		<property name="checkResultDao" ref="checkResultDao"></property>
+		<property name="employeeDao" ref="employeeDao" />
+	</bean>
+	
+	
+	<bean id="claimVoucherService" class="cn.edu.hzvtc.service.impl.ClaimVoucherServiceImpl">
+		<property name="claimVoucherDao" ref="claimVoucherDao"></property>
+		<property name="claimVoucherDetailDao" ref="claimVoucherDetailDao"></property>
+       <property name="employeeDao" ref="employeeDao"></property>
+	</bean>
+
+	<bean id="claimVoucherDetailService" class="cn.edu.hzvtc.service.impl.ClaimVoucherDetailServiceImpl">
+	
+	</bean>
+	
+	<bean id="claimVoucherStatisticsService"
+		class="cn.edu.hzvtc.service.impl.ClaimVoucherStatisticsServiceImpl">
+   <property name="claimVoucherStatisticsDao" ref="claimVoucherStatisticsDao"></property>
+	</bean>
+	<bean id="claimVouyearStatisticsService"
+		class="cn.edu.hzvtc.service.impl.ClaimVouyearStatisticsServiceImpl">
+		<property name="claimVouyearStatisticsDao" ref="claimVouyearStatisticsDao"></property>
+	</bean>
+	
+	<bean id="departmentService" class="cn.edu.hzvtc.service.impl.DepartmentServiceImpl">
+		<property name="departmentDao" ref="departmentDao"></property>
+	</bean>
+	<bean id="employeeService" class="cn.edu.hzvtc.service.impl.EmployeeServiceImpl">
+		<property name="employeeDao" ref="employeeDao" />
+	</bean>
+	<bean id="leaveService" class="cn.edu.hzvtc.service.impl.LeaveServiceImpl">
+		<property name="leaveDao" ref="leaveDao"></property>
+	</bean>
+
+	<bean id="positionService" class="cn.edu.hzvtc.service.impl.PositionServiceImpl">
+	</bean>
+</beans>

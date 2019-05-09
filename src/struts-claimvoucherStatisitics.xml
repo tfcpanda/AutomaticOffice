@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE struts PUBLIC "-//Apache Software Foundation//DTD Struts Configuration 2.1//EN" "struts-2.1.dtd" >
+<struts>
+	<constant name="struts.enable.DynamicMethodInvocation" value="false"></constant>
+
+	<constant name="struts.devMode" value="true"></constant>
+
+	<constant name="struts.i18n.encoding" value="UTF-8"></constant>
+
+
+	<package name="claimvoucherStatistics" namespace="/jsp/statistics" extends="struts-default,jfreechart-default">
+		<action name="deptMonStatistics_*" method="{1}" class="deptMonthStatisticsAction">
+			<result name="list">deptMonthStatistics_list.jsp</result>
+			<result name="detail">deptMonthStatistics_detail.jsp</result>
+			<result name="redirectList" type="redirectAction">deptMonStatistics_getDeptStatisticsByMonth</result>
+			<result name="detailExcel" type="stream">
+				<param name="contentType">application/msexcel</param>
+				<param name="bufferSize">1024</param>
+			</result>
+			<result name="detailChart" type="chart">
+				<param name="width">600</param>
+				<param name="height">400</param>
+			</result>
+			
+		</action>
+		<action name="compMonStatistics_*" method="{1}" class="comMonthStatisticsAction">
+			<result name="list">compMonthStatistics_list.jsp</result>
+			<result name="detail">compMonthStatistics_detail.jsp</result>
+			<result name="redirectList" type="redirectAction">compMonStatistics_getList</result>
+			<result name="detailExcel" type="stream">
+				<param name="contentType">application/msexcel</param>
+				<param name="bufferSize">1024</param>
+			</result>
+			<result name="detailChart" type="chart">
+				<param name="width">600</param>
+				<param name="height">400</param>
+			</result>
+		</action>
+		
+		
+		<action name="deptYearStatistics_*" method="{1}" class="deptYearStatisticsAction">
+			<result name="list">deptYearStatistics_list.jsp</result>
+			<result name="detail">deptYearStatistics_detail.jsp</result>
+			<result name="redirectList" type="redirectAction">deptYearStatistics_getDeptStatisticsByMonth</result>
+			<result name="detailExcel" type="stream">
+				<param name="contentType">application/msexcel</param>
+				<param name="bufferSize">1024</param>
+			</result>
+			<result name="detailChart" type="chart">
+				<param name="width">600</param>
+				<param name="height">400</param>
+			</result>
+		</action>
+		<action name="compYearStatistics_*" method="{1}" class="compYearStatisticsAction">
+			<result name="list">compYearStatistics_list.jsp</result>
+			<result name="detail">compYearStatistics_detail.jsp</result>
+			<result name="redirectList" type="redirectAction">deptYearStatistics_getDeptStatisticsByMonth</result>
+			<result name="detailExcel" type="stream">
+				<param name="contentType">application/msexcel</param>
+				<param name="bufferSize">1024</param>
+			</result>
+			<result name="detailChart" type="chart">
+				<param name="width">600</param>
+				<param name="height">400</param>
+			</result>
+		</action>
+	</package>
+</struts>
